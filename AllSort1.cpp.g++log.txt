@@ -1,0 +1,31 @@
+In file included from C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:60:0:
+C:\Users\Mihail\Desktop\c++\Sorts\DFSort.h: In function 'int BinaryFinder(int*, int, int)':
+C:\Users\Mihail\Desktop\c++\Sorts\DFSort.h:81:15: warning: statement is a reference, not call, to function '_getch' [-Waddress]
+         _getch;
+               ^
+C:\Users\Mihail\Desktop\c++\Sorts\DFSort.h:81:15: warning: statement has no effect [-Wunused-value]
+In file included from C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:62:0:
+C:\Users\Mihail\Desktop\c++\Sorts\BubbleSort.h: In function 'void BubbleSort(int*, int)':
+C:\Users\Mihail\Desktop\c++\Sorts\BubbleSort.h:1:6: warning: no previous declaration for 'void BubbleSort(int*, int)' [-Wmissing-declarations]
+ void BubbleSort (int Numb [], int Size)
+      ^
+In file included from C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:64:0:
+C:\Users\Mihail\Desktop\c++\Sorts\Sort.h: In function 'void Sort(int*, int)':
+C:\Users\Mihail\Desktop\c++\Sorts\Sort.h:1:6: warning: no previous declaration for 'void Sort(int*, int)' [-Wmissing-declarations]
+ void Sort (int Numb [], int Size)
+      ^
+In file included from C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:66:0:
+C:\Users\Mihail\Desktop\c++\Sorts\QSort.h: In function 'void Division(int*, int, int, int)':
+C:\Users\Mihail\Desktop\c++\Sorts\QSort.h:1:6: warning: no previous declaration for 'void Division(int*, int, int, int)' [-Wmissing-declarations]
+ void Division (int Numb [], int Size, int Left, int Right)
+      ^
+C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp: In function 'int main2()':
+C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:68:5: warning: no previous declaration for 'int main2()' [-Wmissing-declarations]
+ int main2 ()
+     ^
+C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp:83:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     }
+     ^
+------------------------------------------------------------------------------------------
+"iconv.exe" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.

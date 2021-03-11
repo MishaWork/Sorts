@@ -1,0 +1,499 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: C:\Users\Mihail\Desktop\c++\TX\TXLib.h, строка: 11635, функция: HPEN__* {anonymous}::TX::txSetColor(COLORREF, double, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2020-01-16 00:00:00 +0300], Instance: 0x00000000005738C8 (64-bit), Flags: Cmdre0, Thread: 0x1A7C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 6 0x00007FFA1BBB7034 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HPEN__* {anonymous}::TX::txSetColor(COLORREF, double, HDC) at C:\Users\Mihail\Desktop\c++\TX\TXLib.h (11635):
+
+  11633: HPEN txSetColor (COLORREF color, double thickness /*= 1*/, HDC dc /*= txDC()*/)
+  11634:     {
+=>11635: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  11636: 
+  11637: $   HPEN pen = Win32::CreatePen ((color == TX_TRANSPARENT? PS_NULL : PS_SOLID), ROUND (thickness), color);
+
+# 1 in void Pixelating(double, double, COLORREF) at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (52):
+
+     50: void Pixelating (double x, double y, COLORREF Color)
+     51:      {
+=>   52:      txSetColor (Color);
+     53: 
+     54:      txSetFillColor (Color);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2020-01-16 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Mihail\Desktop\c++\TX\TXLib.h
+Compiled:	Feb  3 2021 19:58:05, GNU g++ 9.2.0, std=201402L, MinGW-W64 Runtime 7.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Feb 03 2021 19:58:08
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h, строка: 13476, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-03 04:19:52 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56EC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423E70 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: txAlphaBlend() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13476)
+
+# 1 0x0042CDFF in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13476):
+
+  13474: 
+  13475: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13476: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13477: 
+  13478:     // Это автоматическое определение размеров картинки (точнее, HDC источника - source) с помощью txGetExtent().
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-03 04:19:52 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 19:49:06, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 19:49:13
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h, строка: 13477, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x8A4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423E99 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: txAlphaBlend() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13477)
+
+# 1 0x0042CE27 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13477):
+
+  13475: 
+  13476: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13477: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13478: 
+  13479:     // Это автоматическое определение размеров картинки (точнее, HDC источника - source) с помощью txGetExtent().
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 19:53:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 19:54:01
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h, строка: 13496, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 0, 180, 950} не полностью лежит внутри изображения-источника {0, 0, 130, 90}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0xE0C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13495) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004240B9 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: txAlphaBlend() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13496)
+
+# 1 0x0042CE27 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13495):
+
+  13493:         {
+  13494: $       SetLastError (ERROR_INVALID_DATA);
+=>13495: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13496:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13497:         }
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (45):
+
+     43:         {
+     44: 
+=>   45:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     46: 
+     47:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 19:54:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 19:54:53
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h, строка: 13496, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 0, 180, 950} не полностью лежит внутри изображения-источника {0, 0, 130, 90}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x5ACC (Main), GetLastError(): 13 (Недопустимые данные). 
+From: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13495) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004240B9 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: txAlphaBlend() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13496)
+
+# 1 0x0042CE66 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (46):
+
+     44:         {
+     45: 
+=>   46:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     47: 
+     48:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13495):
+
+  13493:         {
+  13494: $       SetLastError (ERROR_INVALID_DATA);
+=>13495: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13496:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13497:         }
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (46):
+
+     44:         {
+     45: 
+=>   46:         txAlphaBlend (txDC(), 50, 860, 180, 950, BinInsert, 0, 0);
+     47: 
+     48:         txRectangle (50, 860, 180, 950);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 19:56:11, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 19:56:19
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042D6DE в функции Replacer() в файле C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp на строке 172. Попытка записать данные по адресу 0x007B0000. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x40CC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042D6DE in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: Replacer() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (172):
+
+    170:     Mass [Slot1] = Temp2;
+    171: 
+=>  172:     Mass [Slot2] = Temp1;
+    173:     }
+    174: 
+
+# 1 0x0042CBAE in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: Division() at C:/Users/Mihail/Desktop/c++/Sorts/QSort.h (49):
+
+     47:         //Control (Numb, Size, OldLeft, OldRight, Left, Right, -1, "Found bad elements");
+     48: 
+=>   49:         Replacer (Numb, Left, Right);
+     50: 
+     51:         //Control (Numb, Size, OldLeft, OldRight, Left, Right, -1, "Replaced two elements");
+
+# 2 0x0042D996 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: DedNEDead() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (238):
+
+    236: 
+    237:         Randomizer (Mass, Size);
+=>  238:         Division   (Mass, Size, 0, Size-1);
+    239:         Pixelating (Size, Compare, TX_YELLOW);
+    240:         Pixelating (Size, Change,  TX_WHITE);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in void Pixelating(double, double, COLORREF) at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (77):
+
+     75:      txSetFillColor (Color);
+     76: 
+=>   77:      txCircle (x , - y/10 + 600, 2);
+     78:      }
+     79: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 20:00:55, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 20:01:03
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#16: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00000013. Попытка прочесть данные по адресу 0x00000013. Дополнительно, превышен лимит исключений _TX_EXCEPTIONS_LIMIT (16). Также превышен лимит фатальных исключений _TX_FATAL_EXCEPTIONS_LIMIT (16). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRE0, Thread: 0x40CC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 2 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+# 3 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+# 4 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+# 5 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+# 6 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+# 7 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+# 8 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+# 9 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#10 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#11 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#12 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#13 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#14 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#15 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#16 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#17 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#18 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#19 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#20 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#21 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#22 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#23 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#24 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#25 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#26 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#27 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#28 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#29 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+#30 0x773D71B4 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlInterlockedCompareExchange64()
+#31 0x773C3B36 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+#32 0x0042CBAE in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: Division() at C:/Users/Mihail/Desktop/c++/Sorts/QSort.h (49):
+
+     47:         //Control (Numb, Size, OldLeft, OldRight, Left, Right, -1, "Found bad elements");
+     48: 
+=>   49:         Replacer (Numb, Left, Right);
+     50: 
+     51:         //Control (Numb, Size, OldLeft, OldRight, Left, Right, -1, "Replaced two elements");
+
+#33 0x0042D996 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: DedNEDead() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (238):
+
+    236: 
+    237:         Randomizer (Mass, Size);
+=>  238:         Division   (Mass, Size, 0, Size-1);
+    239:         Pixelating (Size, Compare, TX_YELLOW);
+    240:         Pixelating (Size, Change,  TX_WHITE);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in void Pixelating(double, double, COLORREF) at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (77):
+
+     75:      txSetFillColor (Color);
+     76: 
+=>   77:      txCircle (x , - y/10 + 600, 2);
+     78:      }
+     79: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 10 2021 20:00:55, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 10 2021 20:01:03
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe, файл: c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h, строка: 13007, функция: bool {anonymous}::TX::txRectangle(double, double, double, double, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005072F4 (32-bit), Flags: Cmdre0, Thread: 0x4908 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041E4F4 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: txRectangle() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13007)
+
+# 1 0x0042CC85 in C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/AllSort1.cpp (37):
+
+     35: int main ()
+     36:     {
+=>   37:     txRectangle (100, 100, 800, 800);
+     38:     }
+     39: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txRectangle(double, double, double, double, HDC) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13007):
+
+  13005: bool txRectangle (double x0, double y0, double x1, double y1, HDC dc /*= txDC()*/)
+  13006:     {
+=>13007: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  13008: 
+  13009: $   return txGDI ((Win32::Rectangle (dc, ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1))), dc);
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.cpp (37):
+
+     35: int main ()
+     36:     {
+=>   37:     txRectangle (100, 100, 800, 800);
+     38:     }
+     39: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Feb 11 2021 19:02:06, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 11 2021 19:02:09
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\AllSort1.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------

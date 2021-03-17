@@ -53,7 +53,7 @@ void Replacer (int Mass [], int Slot1, int Slot2);
 
 int  MinPos (int Mass [], int Size);
 
-void DedNEDead (const Button* Button);
+void RunSort (const Button* Button);
 
 const Button* BttnsChkr (const Button Buttons []);
 
@@ -150,7 +150,7 @@ int main()
 
          if (Check != NULL)
             {
-            DedNEDead (Check);
+            RunSort (Check);
             }
 
          }
@@ -286,7 +286,7 @@ int MinPos      (int Mass [], int Size)
     return Slot;
     }
 
-void DedNEDead (const Button* Button)
+void RunSort (const Button* Button)
     {
     printf ("%d\n", Button->id);
 

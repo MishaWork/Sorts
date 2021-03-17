@@ -32,8 +32,8 @@ class Button
     HDC Image;
 
     void Load ();
-    void Draw ();
-    int Checker ();
+    void Draw () const;
+    int Checker () const;
     };
 
       //Button B = {400, 400, 230, 90, "B.bmp"}
@@ -53,9 +53,9 @@ void Replacer (int Mass [], int Slot1, int Slot2);
 
 int  MinPos (int Mass [], int Size);
 
-void DedNEDead (const Button* Button);
+void RunSort (const Button* Button);
 
-Button* BttnsChkr (const Button Buttons []);
+const Button* BttnsChkr (const Button Buttons []);
 
 #include "DFSort.h"
 
@@ -146,11 +146,11 @@ int main()
             }
         }*/
 
-         Button* Check = BttnsChkr (Buttons);
+         const Button* Check = BttnsChkr (Buttons);
 
          if (Check != NULL)
             {
-            DedNEDead ();
+            RunSort (Check);
             }
 
          }
@@ -286,7 +286,7 @@ int MinPos      (int Mass [], int Size)
     return Slot;
     }
 
-void DedNEDead (Button* Button)
+void RunSort (const Button* Button)
     {
     printf ("%d\n", Button->id);
 
@@ -364,21 +364,21 @@ void Button::Load ()
     if (Image == NULL) txMessageBox ("ImageNotFound");
     }
 
-void Button::Draw ()
+void Button::Draw () const
     {
     txBitBlt (txDC(), x, y, 0, 0, Image);
     }
 
-int Button::Checker ()
+int Button::Checker () const
     {
     if (txMouseButtons () == 1 && x < txMouseX () && txMouseX () < x + width && y < txMouseY () && txMouseY () < y + height) return id;
 
     else return 0;
     }
 
-Button* BttnsChkr (Button Buttons [])
+const Button* BttnsChkr (const Button Buttons [])
     {
-    Button* Check = NULL;
+    const Button* Check = NULL;
 
     for (int Count = 0; Buttons [Count].x != -1 && Buttons [Count].y != -1; Count++)
         {

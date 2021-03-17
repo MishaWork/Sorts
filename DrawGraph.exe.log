@@ -1,0 +1,284 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe,
+
+ВНЕЗАПНО: Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x0041EB89 в функции txEllipse() в файле c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h на строке 13028. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005052F4 (32-bit), Flags: CMdRe0, Thread: 0x106C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EB89 in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txEllipse() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13028)
+# 1 0x0041EDCD in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txCircle() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13035)
+
+# 2 0x0042C2BC in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x++;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txEllipse(double, double, double, double, HDC) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13028):
+
+  13026: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  13027: 
+=>13028: $   return txGDI ((Win32::Ellipse (dc, ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1))), dc);
+  13029:     }
+  13030: 
+
+# 1 in bool {anonymous}::TX::txCircle(double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13035):
+
+  13033: bool txCircle (double x, double y, double r)
+  13034:     {
+=>13035: $1  return txEllipse (x-r, y-r, x+r, y+r);
+  13036:     }
+  13037: 
+
+# 2 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x++;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Mar 17 2021 19:45:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 17 2021 19:45:55
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x0041EB89 в функции txEllipse() в файле c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h на строке 13028. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005052F4 (32-bit), Flags: CMdRe0, Thread: 0x106C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EB89 in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txEllipse() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13028)
+# 1 0x0041EDCD in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txCircle() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13035)
+
+# 2 0x0042C2BC in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x++;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txEllipse(double, double, double, double, HDC) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13028):
+
+  13026: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  13027: 
+=>13028: $   return txGDI ((Win32::Ellipse (dc, ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1))), dc);
+  13029:     }
+  13030: 
+
+# 1 in bool {anonymous}::TX::txCircle(double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13035):
+
+  13033: bool txCircle (double x, double y, double r)
+  13034:     {
+=>13035: $1  return txEllipse (x-r, y-r, x+r, y+r);
+  13036:     }
+  13037: 
+
+# 2 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x++;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Mar 17 2021 19:45:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 17 2021 19:45:55
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe,
+
+ВНЕЗАПНО: Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x0041EB89 в функции txEllipse() в файле c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h на строке 13028. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005052F4 (32-bit), Flags: CMdRe0, Thread: 0x12E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EB89 in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txEllipse() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13028)
+# 1 0x0041EDCD in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txCircle() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13035)
+
+# 2 0x0042C2BE in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x+= 0.1;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txEllipse(double, double, double, double, HDC) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13028):
+
+  13026: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  13027: 
+=>13028: $   return txGDI ((Win32::Ellipse (dc, ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1))), dc);
+  13029:     }
+  13030: 
+
+# 1 in bool {anonymous}::TX::txCircle(double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13035):
+
+  13033: bool txCircle (double x, double y, double r)
+  13034:     {
+=>13035: $1  return txEllipse (x-r, y-r, x+r, y+r);
+  13036:     }
+  13037: 
+
+# 2 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x+= 0.1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Mar 17 2021 19:47:03, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 17 2021 19:47:07
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x0041EB89 в функции txEllipse() в файле c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h на строке 13028. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400], Instance: 0x005052F4 (32-bit), Flags: CMdRe0, Thread: 0x12E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EB89 in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txEllipse() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13028)
+# 1 0x0041EDCD in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: txCircle() at c:/users/mihail/desktop/c++/codeblocks/codeblocks/mingw/include/txlib.h (13035)
+
+# 2 0x0042C2BE in C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe: main() at C:/Users/Mihail/Desktop/c++/Sorts/DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x+= 0.1;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txEllipse(double, double, double, double, HDC) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13028):
+
+  13026: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  13027: 
+=>13028: $   return txGDI ((Win32::Ellipse (dc, ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1))), dc);
+  13029:     }
+  13030: 
+
+# 1 in bool {anonymous}::TX::txCircle(double, double, double) at c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h (13035):
+
+  13033: bool txCircle (double x, double y, double r)
+  13034:     {
+=>13035: $1  return txEllipse (x-r, y-r, x+r, y+r);
+  13036:     }
+  13037: 
+
+# 2 in int main() at C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.cpp (15):
+
+     13:         double y = x*x;
+     14: 
+=>   15:         txCircle (x + 400, -y - 300, 5);
+     16: 
+     17:         x+= 0.1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 169, Date: 2021-02-06 12:58:46 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\mihail\desktop\c++\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Mar 17 2021 19:47:03, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 17 2021 19:47:07
+
+Run file:	C:\Users\Mihail\Desktop\c++\Sorts\DrawGraph.exe
+Directory:	C:\Users\Mihail\Desktop\c++\Sorts
+
+--------------------------------------------------
